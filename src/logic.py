@@ -12,7 +12,7 @@ class EcoNavigator:
     def get_coordinates(self, location_name):
         url = "https://nominatim.openstreetmap.org/search"
         params = {'q': f"{location_name}", 'format': 'json', 'limit': 1}
-        headers = {'User-Agent': 'EcoPath_Kanpur_Project'}
+        headers = {'User-Agent': 'EcoPath_Project'}
         try:
             time.sleep(1) # Compliance with free-tier rate limits
             res = requests.get(url, params=params, headers=headers, timeout=10).json()
