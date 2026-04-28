@@ -77,7 +77,7 @@ if st.session_state.get("calculate"):
             else:
                 st.error("No valid driving paths found."); st.session_state.calculate = False
         else:
-            st.error("Location not found in Kanpur."); st.session_state.calculate = False
+            st.error("Location not found."); st.session_state.calculate = False
 
 if "routes" in st.session_state:
     routes = st.session_state.routes
