@@ -30,7 +30,7 @@ with st.sidebar:
         st.error("❌ GEMINI_API_KEY Missing in .env")
 
     st.divider()
-    o_name = st.text_input("Start Location", placeholder="e.g., PSIT Kanpur")
+    o_name = st.text_input("Start Location", placeholder="e.g., HBTU")
     d_name = st.text_input("Destination", placeholder="e.g., Moti Jheel")
 
     if st.button("🚀 Find Healthiest Paths"):
@@ -47,7 +47,7 @@ def get_dynamic_insight(idx):
         nav = EcoNavigator(api_key)
         route = st.session_state.routes[idx]
 
-        with st.spinner(f"Gemini 3 is analyzing the health profile of Route {idx}..."):
+        with st.spinner(f"Gemini is analyzing the health profile of Route {idx}..."):
             is_best = (idx == 0)
             new_insight = nav.get_ai_advice_simple(
                 st.session_state.names[0],
