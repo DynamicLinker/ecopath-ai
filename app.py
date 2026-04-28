@@ -79,6 +79,8 @@ if st.session_state.get("calculate"):
         else:
             st.error("Location not found."); st.session_state.calculate = False
 
+m = folium.Map(location=st.session_state.get("s_coords", [26.45, 80.33]), zoom_start=12)
+
 if "routes" in st.session_state:
     routes = st.session_state.routes
 
@@ -131,6 +133,7 @@ if "routes" in st.session_state:
 
 else:
     # Landing Page
+    map_data = st_folium(m, width=1200, height=550, key="eco_map")
     st.write("---")
     st.info("👋 Enter your journey details to visualize the healthiest path through Kanpur.")
     st.caption(f"Developed by Ajitesh Chaurasia (PSIT Kanpur) for the Google Solution Challenge 2026.")
